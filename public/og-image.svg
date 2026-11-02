@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0c1a28"/><stop offset="1" stop-color="#071016"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#1d776e" stop-opacity=".42"/><stop offset="1" stop-color="#1d776e" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1000" cy="145" r="450" fill="url(#glow)"/>
+  <g stroke="#1e3745" opacity=".45"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M100 0V630M300 0V630M500 0V630M700 0V630M900 0V630M1100 0V630"/></g>
+  <g transform="translate(68 60)"><path d="M12 31.5c0-11.05 8.95-20 20-20S52 20.45 52 31.5 43.05 51.5 32 51.5" stroke="#43DBC6" stroke-width="6" stroke-linecap="round" fill="none"/><path d="M32 51.5H12V35" stroke="#E5F3F1" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="32" cy="31.5" r="6.5" fill="#43DBC6"/></g>
+  <text x="143" y="101" font-family="system-ui,sans-serif" font-size="34" font-weight="700" fill="#f4f8fc">Atomic Flow</text>
+  <text x="68" y="286" font-family="system-ui,sans-serif" font-size="71" font-weight="800" fill="#f4f8fc">Build reliable workflows.</text>
+  <text x="68" y="375" font-family="system-ui,sans-serif" font-size="71" font-weight="800" fill="#43DBC6">Make failures predictable.</text>
+  <text x="70" y="470" font-family="system-ui,sans-serif" font-size="28" fill="#aac1ca">Open-source foundations for explicit execution and recovery.</text>
+  <text x="70" y="576" font-family="ui-monospace,monospace" font-size="20" letter-spacing="2" fill="#5bdcca">ATOMIC-FLOW.DEV  /  EARLY DEVELOPMENT</text>
+</svg>

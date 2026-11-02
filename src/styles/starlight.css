@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  color-scheme: light;
+  --sl-font: 'Nunito', 'Segoe UI', sans-serif;
+  --sl-font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --sl-color-accent-low: #f9e7e1;
+  --sl-color-accent: #bd432b;
+  --sl-color-accent-high: #74301f;
+  --sl-color-white: #20201e;
+  --sl-color-gray-1: #34332f;
+  --sl-color-gray-2: #504f49;
+  --sl-color-gray-3: #65645e;
+  --sl-color-gray-4: #85837b;
+  --sl-color-gray-5: #deddd5;
+  --sl-color-gray-6: #f0efe9;
+  --sl-color-black: #f7f6f1;
+  --sl-color-bg: #f7f6f1;
+  --sl-color-bg-nav: #f7f6f1;
+  --sl-color-bg-sidebar: #f0efe9;
+  --sl-color-hairline: #deddd5;
+  --sl-color-hairline-light: #e9e8e1;
+  --sl-content-width: 50rem;
+}
+:root[data-theme='light'] {
+  --sl-color-accent-low: #f9e7e1;
+  --sl-color-accent: #bd432b;
+  --sl-color-accent-high: #74301f;
+  --sl-color-white: #20201e;
+  --sl-color-gray-1: #34332f;
+  --sl-color-gray-2: #504f49;
+  --sl-color-gray-3: #65645e;
+  --sl-color-gray-4: #85837b;
+  --sl-color-gray-5: #deddd5;
+  --sl-color-gray-6: #f0efe9;
+  --sl-color-black: #f7f6f1;
+  --sl-color-bg: #f7f6f1;
+  --sl-color-bg-nav: #f7f6f1;
+  --sl-color-bg-sidebar: #f0efe9;
+  --sl-color-hairline: #deddd5;
+  --sl-color-hairline-light: #e9e8e1;
+}
+.site-title { font-weight: 600; letter-spacing: -.04em; }
+.sl-markdown-content a { text-underline-offset: .2em; }

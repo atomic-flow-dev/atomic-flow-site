@@ -1,0 +1,12 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+---
+<SiteLayout current="about" title="About — Atomic Flow" description="Learn about the philosophy and organization behind the Atomic Flow open-source project.">
+  <div class="site-container subpage-hero"><h1>Reliable by design.<br/><span>Honest about limits.</span></h1><p>Atomic Flow began with a simple question: how can applications make failure handling explicit, testable, and easier to reason about?</p></div>
+  <div class="site-container subpage-body"><div class="text-grid">
+    <article class="text-panel"><h2>What we're building</h2><p>An open-source ecosystem centered on explicit workflow execution and recovery. The TypeScript implementation is the starting point; shared concepts may guide other language implementations later.</p><a href="/docs/concepts/overview/">Explore the concepts ↗</a></article>
+    <article class="text-panel"><h2>What we won't promise</h2><p>No library can universally roll back a payment, an email, or an arbitrary external action. Atomic Flow aims to make such limits and failure outcomes visible — not disguise them as guaranteed atomicity.</p><a href="/docs/concepts/guarantees/">Understand the limits ↗</a></article>
+    <article class="text-panel"><h2>Open source</h2><p>Atomic Flow's repositories use the Apache License, Version 2.0. Source, documentation, and design notes are visible while the project evolves.</p><a href="https://github.com/atomic-flow-dev" target="_blank" rel="noopener noreferrer">Visit the organization ↗</a></article>
+    <article class="text-panel"><h2>Contributions</h2><p>External contributions are temporarily restricted while foundational contracts and APIs are defined. The project can open up incrementally as those foundations mature.</p><a href="/roadmap/">Follow the roadmap ↗</a></article>
+  </div></div>
+</SiteLayout>

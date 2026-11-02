@@ -1,0 +1,67 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const principles = [
+  { num: '01', title: 'Consistency first', body: 'Start with the invariants your application must protect, especially when an operation fails.', icon: 'shield' },
+  { num: '02', title: 'Explicit by design', body: 'Make execution boundaries, failures, and recovery outcomes observable instead of implicit.', icon: 'layers' },
+  { num: '03', title: 'Test the bad days', body: 'Validate partial execution and recovery scenarios, not only the happy path.', icon: 'test' },
+];
+---
+<SiteLayout current="home">
+  <div class="hero-backdrop" aria-hidden="true"></div>
+  <section class="hero site-container" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">Build reliable<br/><span>workflows.</span></h1>
+      <p class="hero-subtitle">Make failures <em>predictable.</em></p>
+      <p class="hero-desc">An open-source foundation for explicit failure handling, predictable recovery, and verifiable consistency — designed to grow across programming languages.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/docs/">Explore the docs <span aria-hidden="true">↗</span></a>
+        <a class="button button-outline" href="https://github.com/atomic-flow-dev" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-caption"><span class="caption-led"></span><span>Public APIs are still evolving. No stable release yet.</span></div>
+    </div>
+    <figure class="flow-story" aria-labelledby="flow-story-title">
+      <h2 id="flow-story-title">When a step fails</h2>
+      <ol class="flow-steps">
+        <li class="flow-step"><h3>Workflow begins</h3><p>An order is submitted.</p></li>
+        <li class="flow-step"><h3>Payment fails</h3><p>The external service returns an error.</p></li>
+        <li class="flow-step"><h3>Recovery is attempted</h3><p>The outcome is recorded; side effects are not assumed to roll back automatically.</p></li>
+      </ol>
+    </figure>
+  </section>
+
+  <section class="trust-strip" aria-label="Project focus">
+    <div class="site-container trust-inner">
+      <span>DESIGNED FOR</span><strong>APPLICATION WORKFLOWS</strong><span class="trust-divider"></span><strong>FAILURE VISIBILITY</strong><span class="trust-divider"></span><strong>RECOVERY VALIDATION</strong>
+    </div>
+  </section>
+
+  <section class="section site-container" id="principles">
+    <div class="section-head"><div><h2>Failures happen.<br/><span>Uncertainty doesn't have to.</span></h2></div><p>A workflow can span a database, a service, and an external API. A transaction boundary around one component rarely covers them all. Atomic Flow explores what responsible recovery looks like outside that boundary.</p></div>
+    <div class="principles-grid">
+      {principles.map((p) => <article class="principle-card">
+        <div class="card-top"><span class="principle-glyph" aria-hidden="true">{p.icon === 'shield' ? '◇' : p.icon === 'layers' ? '≡' : '✳'}</span></div>
+        <h3>{p.title}</h3><p>{p.body}</p>
+      </article>)}
+    </div>
+  </section>
+
+  <section class="section section-alt" id="ecosystem">
+    <div class="site-container">
+      <div class="section-head"><div><h2>One philosophy.<br/><span>Distinct responsibilities.</span></h2></div><p>Keep the execution runtime separate from the tools that challenge it. Build for real failures, not just tidy demonstrations.</p></div>
+      <div class="products-grid">
+        <article class="product-card"><div class="product-top"><span class="product-icon">⌁</span></div><div><p class="product-overline">PRODUCTION RUNTIME</p><h3>Atomic Flow <span>Core</span></h3><p>Define and execute workflows with explicit boundaries and recovery semantics. The public API and supported guarantees are under active design.</p></div><div class="product-foot"><code>@atomic-flow/core</code><a href="/docs/implementations/typescript/" aria-label="Learn about Atomic Flow Core">Learn more ↗</a></div></article>
+        <article class="product-card"><div class="product-top"><span class="product-icon product-icon-flask">⌬</span></div><div><p class="product-overline">TESTING & VALIDATION</p><h3>Failure <span>Lab</span></h3><p>Explore controlled failure injection and invariant checks. A testing-focused companion — not an extra runtime requirement for production.</p></div><div class="product-foot"><code>@atomic-flow/failure-lab</code><a href="/docs/tools/failure-lab/" aria-label="Learn about Failure Lab">Learn more ↗</a></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section site-container" id="implementations">
+    <div class="section-head"><div><h2>Different languages.<br/><span>Shared expectations.</span></h2></div><p>The project aims to document common behavioral expectations, while allowing each language implementation to feel native to its ecosystem.</p></div>
+    <div class="implementation-panel"><div class="impl-copy"><h3>TypeScript <span>/ JavaScript</span></h3><p>The first implementation lives in its own repository. Core and Failure Lab are managed together using pnpm workspaces.</p><a class="inline-link" href="https://github.com/atomic-flow-dev/atomic-flow-ts" target="_blank" rel="noopener noreferrer">Explore the TypeScript repository <span aria-hidden="true">↗</span></a></div><div class="impl-code" aria-label="Package names for the TypeScript implementation"><span class="impl-comment">// Ecosystem packages</span><span><b class="token-import">@atomic-flow</b>/core</span><span><b class="token-import">@atomic-flow</b>/failure-lab</span><span class="impl-comment">// Early development · not yet stable</span></div></div>
+    <div class="future-languages"><span>FUTURE POSSIBILITIES</span><div><span>Rust</span><span>Go</span><span>Python</span><span>More as needed</span></div><small>Ideas, not announced implementations or release commitments.</small></div>
+  </section>
+
+  <section class="section statement-section" id="philosophy"><div class="site-container statement-inner"><blockquote>“The goal isn't to eliminate failures. It's to make their consequences <em>understandable, manageable, and testable.</em>”</blockquote><div class="statement-footer"><span>ATOMIC FLOW / PROJECT PRINCIPLE</span><a href="/docs/concepts/guarantees/">Read about our guarantees ↗</a></div></div></section>
+
+  <section class="section site-container last-section"><div class="cta-card"><div><h2>Built in the open.<br/><span>Still taking shape.</span></h2><p>Atomic Flow is in its earliest stage. Follow the design, review the evolving documentation, or browse the source. External contributions are temporarily restricted while foundational contracts are established.</p><div class="hero-actions"><a class="button button-primary" href="/docs/">Read the documentation ↗</a><a class="button button-outline" href="/roadmap/">View the roadmap ↗</a></div></div><div class="cta-symbol" aria-hidden="true"><img src="/favicon.svg" width="210" height="210" alt="" /></div></div></section>
+</SiteLayout>

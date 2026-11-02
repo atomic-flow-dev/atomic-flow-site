@@ -1,0 +1,14 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+const phases = [
+  { step: 'PHASE 1', title: 'Foundations & vocabulary', description: 'Define the execution model, shared terminology, lifecycle states, failure semantics, and the consistency invariants the project aims to preserve.' },
+  { step: 'PHASE 2', title: 'TypeScript Core', description: 'Develop the first implementation behind explicit contracts. Build out failure handling and recovery behaviors with automated tests.' },
+  { step: 'PHASE 3', title: 'Failure Lab', description: 'Add controlled failure injection and repeatable scenarios for validating invariants and recovery behavior.' },
+  { step: 'PHASE 4', title: 'First alpha release', description: 'Document observed guarantees and limitations, publish the initial TypeScript packages, and collect early feedback.' },
+  { step: 'FUTURE', title: 'Language-independent conformance', description: 'Evolve shared behavioral expectations and explore additional language implementations when the initial design is established.' },
+];
+---
+<SiteLayout current="roadmap" title="Roadmap — Atomic Flow" description="Explore the planned development milestones for the Atomic Flow open-source project.">
+  <div class="site-container subpage-hero"><h1>Build the foundations.<br/><span>Prove the guarantees.</span></h1><p>Atomic Flow is an early-stage initiative. This roadmap describes priorities, not delivery promises, committed dates, or available features.</p></div>
+  <div class="site-container subpage-body"><div class="status-note">Current status: pre-alpha. The execution model, public APIs, and first implementation are in active design.</div><div class="timeline">{phases.map((phase) => <article class="timeline-item"><span>{phase.step}</span><div><h2>{phase.title}</h2><p>{phase.description}</p></div></article>)}</div></div>
+</SiteLayout>

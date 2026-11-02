@@ -1,0 +1,45 @@
+---
+import '../styles/site.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  current?: 'home' | 'roadmap' | 'about';
+}
+const {
+  title = 'Atomic Flow — Build reliable workflows',
+  description = 'Atomic Flow is an open-source effort to make workflow failures predictable, recoverable, and testable.',
+  current = 'home',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://atomic-flow.dev');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Atomic Flow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content="https://atomic-flow.dev/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <SiteHeader current={current} />
+      <main id="main"><slot /></main>
+      <SiteFooter />
+    </div>
+  </body>
+</html>
